@@ -1,0 +1,19 @@
+import time
+from plyer import notification
+
+tasks = [
+    {"title": "Drink Water", "message": "Staying hydrated is essential for productivity.", "interval": 60* 60},
+    {"title": "Take a Break", "message": "Regular breaks boost creativity and focus.", "interval": 60* 90},
+    {"title": "Check Emails", "message": "Stay on top of your communication.", "interval": 30* 60}
+] 
+
+if __name__ == '__main__':
+    while True:
+        for task in tasks:
+            notification.notify(
+                title=task["title"],
+                message=task["message"],
+                app_icon=r"C:\Users\ajays\OneDrive\Desktop\Ajay12\B\P\Python\icon.ico",
+                timeout=10
+            )
+            time.sleep(task["interval"])
